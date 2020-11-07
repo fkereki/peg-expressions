@@ -1,0 +1,38 @@
+{
+  "dependencies": {
+    "pegjs": "^0.11.0-master.b7b87ea"
+  },
+  "scripts": {
+    "buildForNode": "./node_modules/pegjs/bin/peg.js excel.pegjs -f commonjs -o excel.node.js",
+    "buildForBrowser": "./node_modules/pegjs/bin/peg.js excel.pegjs -f es -o excel.browser.js",
+    "test": "npm run buildForNode && jest"
+  },
+  "devDependencies": {
+    "eslint": "^7.10.0",
+    "eslint-plugin-jest": "^24.1.0",
+    "jest": "^26.5.3"
+  },
+  "eslint": {
+    "env": {
+      "browser": true,
+      "node": true,
+      "commonjs": true,
+      "es2020": true,
+      "jest/globals": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 11
+    },
+    "plugins": [
+      "jest"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:jest/all"
+    ]
+  },
+  "prettier": {
+    "printWidth": 120,
+    "tabWidth": 2
+  }
+}
