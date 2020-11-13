@@ -215,11 +215,11 @@ VALUE "value"
     return (!val);
   }
 
-  / FALSE_ LPAREN_ RPAREN_ {
+  / FALSE_ (LPAREN_ RPAREN_)? {
     return false;
   }
 
-  / TRUE_ LPAREN_ RPAREN_ {
+  / TRUE_ (LPAREN_ RPAREN_)? {
     return true;
   }
 
