@@ -1,11 +1,15 @@
 {
   "dependencies": {
+    "axios": "^0.21.0",
     "pegjs": "^0.11.0-master.b7b87ea"
   },
   "scripts": {
-    "buildForNode": "./node_modules/pegjs/bin/peg.js excel.pegjs -f commonjs -o excel.node.js",
+    "buildForNode": "./node_modules/pegjs/bin/peg.js arithmetic.pegjs -f commonjs -o excel.node.js",
     "buildForBrowser": "./node_modules/pegjs/bin/peg.js excel.pegjs -f es -o excel.browser.js",
-    "test": "npm run buildForNode && jest"
+    "test": "npm run buildForNode && jest",
+    "buildAsyncForNode": "./node_modules/pegjs/bin/peg.js excel.async.pegjs -f commonjs -o excel.async.node.js",
+    "buildAsyncForBrowser": "./node_modules/pegjs/bin/peg.js excel.async.pegjs -f es -o excel.async.browser.js",
+    "testAsync": "npm run buildAsyncForNode && jest"
   },
   "devDependencies": {
     "eslint": "^7.10.0",
